@@ -1,11 +1,3 @@
-#!/usr/bin/env python3
-"""
-Lab07 - Elephant Call Classification (Spectral & Cepstral Features)
-
-Models: SVM, DecisionTree, RandomForest, AdaBoost, Naïve-Bayes, MLP
-Hyperparameter tuning with RandomizedSearchCV
-Evaluation with 5-fold cross-validation
-"""
 
 import warnings
 warnings.filterwarnings("ignore")
@@ -27,9 +19,8 @@ from sklearn.naive_bayes import GaussianNB
 from sklearn.neural_network import MLPClassifier
 
 
-# ========================
 # CONFIG
-# ========================
+
 FILES = {
     "spectral": "20231225_dfall_obs_data_and_spectral_features_revision1_n469.csv",
     "cepstral": "20240106_dfall_obs_data_and_cepstral_features_revision1_n469.csv"
@@ -40,9 +31,8 @@ CV_FOLDS = 5
 N_ITER = 10  # randomized search iterations
 
 
-# ========================
 # Helpers
-# ========================
+
 def load_dataset(path):
     df = pd.read_csv(path)
     if TARGET not in df.columns:
@@ -155,3 +145,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
